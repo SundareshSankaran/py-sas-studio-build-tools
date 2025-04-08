@@ -2,3 +2,13 @@ uv
 py-sas-studio-custom-steps
 ipykernel
 jupyter
+
+
+py-sas-studio-custom-steps
+yq
+ipykernel
+pandas
+tabulate
+openai
+swat
+
