@@ -14,7 +14,7 @@ uv pip install -r requirements.txt --force-reinstall --upgrade
 
 python -m ipykernel install --user --name=buildproj
 
-python scripts/a_extract_step_file.py "$STEP_NAME" "$FILE_LOCATION"
+# python scripts/a_extract_step_file.py "$STEP_NAME" "$FILE_LOCATION"
 
 # python b_build_step.py "$STEP_NAME" "$FILE_LOCATION"
 
