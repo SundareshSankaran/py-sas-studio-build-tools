@@ -3,6 +3,9 @@ import sys
 
 step_name = sys.argv[1]
 
+print(f"Building custom step: {step_name}")
+
+
 if len(sys.argv) > 2:
     file_location = sys.argv[2]
 
@@ -26,4 +29,4 @@ if os.path.exists(os.path.join(os.getcwd(),"..",f"{step_name}","extras")):
     cs.attach_ui(ui_json_file=os.path.join(os.getcwd(),"..",f"{step_name}","extras",f"{step_name} components.json"))
     cs.attach_sas_program(sas_file=os.path.join(os.getcwd(),"..",f"{step_name}","extras",f"{step_name}.sas"))   
 
-cs.create_custom_step(custom_step_path=os.path.join(os.getcwd(),"..",f"{step_name}",f"Test {step_name}.step"))
+cs.create_custom_step(custom_step_path=os.path.join(os.getcwd(),"..",f"{step_name}",f"{step_name}.step"))
