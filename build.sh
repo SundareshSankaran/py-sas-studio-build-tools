@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-STEP_NAME="LLM - Azure OpenAI In-context Learning"
-FILE_LOCATION="https://raw.githubusercontent.com/SundareshSankaran/LLM-Azure-OpenAI-In-context-Learning/refs/heads/39-edits-to-set-prompt/LLM%20-%20Azure%20OpenAI%20In-context%20Learning.step"
+STEP_NAME="Python - Create a Virtual Environment"
+FILE_LOCATION="https://raw.githubusercontent.com/SundareshSankaran/sas-studio-custom-steps/refs/heads/28-define-update-objective-for-update-to-python-virtual-environments-step/Python%20Virtual%20environments/Python%20-%20Create%20a%20Virtual%20Environment.step"
 
 set -euo pipefail
 
@@ -14,9 +14,9 @@ uv pip install -r requirements.txt --force-reinstall --upgrade
 
 python -m ipykernel install --user --name=buildproj
 
-# python scripts/a_extract_step_file.py "$STEP_NAME" "$FILE_LOCATION"
-python scripts/b_build_test_step.py "$STEP_NAME" "$FILE_LOCATION"
-python scripts/c_build_step.py "$STEP_NAME" "$FILE_LOCATION"
+python scripts/a_extract_step_file.py "$STEP_NAME" "$FILE_LOCATION"
+# python scripts/b_build_test_step.py "$STEP_NAME" "$FILE_LOCATION"
+# python scripts/c_build_step.py "$STEP_NAME" "$FILE_LOCATION"
 
 
 # python b_build_step.py "$STEP_NAME" "$FILE_LOCATION"
