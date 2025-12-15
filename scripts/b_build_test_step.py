@@ -30,8 +30,11 @@ if is_url(file_location):
     # Write some data to the temporary file
         temp_file.write(res.content)
         cs.load_step_file(custom_step_file=temp_file.name)
-else:
+elif os.path.exists(os.path.join(os.getcwd(),"..",repo_folder,f"{step_name}",f"{step_name}.step")):
     cs.load_step_file(custom_step_file=os.path.join(file_location,f"{step_name}.step"))
+else:
+    print(f"Step file not found at location: {file_location}")
+    print("Proceeding to build new file")
 
 if os.path.exists(os.path.join(os.getcwd(),"..",repo_folder,f"{step_name}","extras")):
     cs.attach_ui(ui_json_file=os.path.join(os.getcwd(),"..",repo_folder,f"{step_name}","extras",f"{step_name} components.json"))
