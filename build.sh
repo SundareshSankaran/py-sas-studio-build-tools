@@ -29,7 +29,7 @@ uv pip install -r requirements.txt --force-reinstall --upgrade
 
 # python scripts/a_extract_step_file.py "$STEP_NAME" "$FILE_LOCATION"
 
-# python scripts/b_build_test_step.py "$STEP_NAME" "$1"
+python scripts/b_build_test_step.py "$STEP_NAME" "$1"
 python scripts/c_build_step.py "$STEP_NAME" "$1"
 
 
