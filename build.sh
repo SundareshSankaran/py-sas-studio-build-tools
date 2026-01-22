@@ -11,7 +11,13 @@
 # FILE_LOCATION="https://raw.githubusercontent.com/SundareshSankaran/sas-studio-custom-steps/refs/heads/49-update-python---revert-to-original-environment/Python%20-%20Create%20a%20Virtual%20Environment/Python%20-%20Create%20a%20Virtual%20Environment.step"
 
 STEP_NAME=`basename $1`
-FILE_LOCATION=$2
+
+if [ -n "$2" ]; then
+    FILE_LOCATION=$2
+else
+    FILE_LOCATION=$1
+fi
+
 
 set -euo pipefail
 
@@ -29,8 +35,8 @@ uv pip install -r requirements.txt --force-reinstall --upgrade
 
 # python scripts/a_extract_step_file.py "$STEP_NAME" "$FILE_LOCATION"
 
-python scripts/b_build_test_step.py "$STEP_NAME" "$1"
-python scripts/c_build_step.py "$STEP_NAME" "$1"
+python scripts/b_build_test_step.py "$STEP_NAME" "$1" "$FILE_LOCATION"
+# python scripts/c_build_step.py "$STEP_NAME" "$1"
 
 
 # python b_build_step.py "$STEP_NAME" "$FILE_LOCATION"
